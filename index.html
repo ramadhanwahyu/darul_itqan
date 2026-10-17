@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMA Islam Terpadu Darul Itqan — Membina Generasi Qurani Berprestasi</title>
+<meta name="description" content="SMA Islam Terpadu Darul Itqan. Pendidikan terpadu memadukan hafalan Al-Qur'an bersanad, kurikulum nasional unggulan, dan pembinaan adab kepemimpinan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --navy:#16294A;
+  --navy-2:#1E3A66;
+  --navy-3:#2C4A7C;
+  --navy-dark:#0D1B33;
+  --orange:#E8833A;
+  --orange-d:#CF6D24;
+  --orange-l:#FDF2E7;
+  --gold:#E6B54A;
+  --white:#fff;
+  --gray:#F6F8FB;
+  --gray-2:#EDF1F7;
+  --ink:#0F172A;
+  --mute:#64748B;
+  --mute-2:#94A3B8;
+  --line:#E8EDF4;
+  --r:14px;
+  --r-sm:8px;
+  --r-lg:20px;
+  --c:1240px;
+  --sh-sm:0 2px 8px rgba(22,41,74,.06);
+  --sh:0 12px 32px rgba(22,41,74,.08);
+  --sh-lg:0 24px 60px rgba(22,41,74,.14);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  color:var(--ink);background:var(--white);font-size:15px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul,ol{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4{margin:0;font-weight:800;line-height:1.18;letter-spacing:-.02em;color:var(--navy);}
+p{margin:0;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+.container{width:100%;max-width:var(--c);margin-inline:auto;padding-inline:22px;}
+@media(min-width:768px){.container{padding-inline:40px;}}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  padding:14px 26px;border-radius:999px;font-size:14px;font-weight:700;
+  transition:all .2s ease;white-space:nowrap;line-height:1;letter-spacing:-.005em;
+  border:1.5px solid transparent;font-family:inherit;}
+.btn svg{width:16px;height:16px;flex:none;transition:transform .25s;}
+.btn:hover svg{transform:translateX(3px);}
+
+.btn-o{background:var(--orange);color:#fff;
+  box-shadow:0 6px 18px rgba(232,131,58,.28);}
+.btn-o:hover{background:var(--orange-d);transform:translateY(-2px);
+  box-shadow:0 12px 26px rgba(232,131,58,.38);}
+
+.btn-ghost{border-color:rgba(22,41,74,.16);color:var(--navy);background:#fff;}
+.btn-ghost:hover{border-color:var(--navy);background:var(--gray);}
+
+.btn-white{background:#fff;color:var(--navy);}
+.btn-white:hover{background:var(--gray);transform:translateY(-2px);}
+
+.btn-line{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(255,255,255,.06);}
+.btn-line:hover{background:rgba(255,255,255,.16);border-color:#fff;}
+
+.link{display:inline-flex;align-items:center;gap:8px;color:var(--navy-2);
+  font-weight:700;font-size:13.5px;transition:color .2s;}
+.link svg{width:14px;height:14px;transition:transform .2s;}
+.link:hover{color:var(--orange);}
+.link:hover svg{transform:translateX(3px);}
+
+/* ============================================================
+   SECTION
+   ============================================================ */
+.sec{padding:80px 0;}
+@media(min-width:768px){.sec{padding:104px 0;}}
+.sec-gray{background:var(--gray);}
+.sec-navy{background:var(--navy-dark);color:#fff;}
+.sec-navy h2,.sec-navy h3,.sec-navy h4{color:#fff;}
+
+.sec-head{margin-bottom:52px;max-width:640px;}
+.sec-head.center{margin-inline:auto;text-align:center;}
+.sec-head h2{font-size:clamp(26px,3.6vw,40px);margin-bottom:14px;letter-spacing:-.025em;}
+.sec-head p{color:var(--mute);font-size:15.5px;line-height:1.7;}
+.sec-navy .sec-head p{color:rgba(255,255,255,.7);}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;
+  font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:16px;}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);border-radius:2px;}
+.sec-navy .eyebrow{color:var(--gold);}
+.sec-navy .eyebrow::before{background:var(--gold);}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.nav{position:sticky;top:0;z-index:100;background:#fff;
+  border-bottom:1px solid transparent;transition:border-color .25s,box-shadow .25s;}
+.nav.scrolled{border-color:var(--line);box-shadow:0 4px 18px rgba(22,41,74,.05);}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;
+  gap:24px;padding-block:14px;position:relative;}
+
+.brand{display:flex;align-items:center;gap:12px;flex:none;}
+.brand__mark{width:44px;height:44px;flex:none;position:relative;
+  display:grid;place-items:center;}
+.brand__mark img,.brand__mark svg{width:100%;height:100%;object-fit:contain;display:block;}
+.brand__txt{display:flex;flex-direction:column;line-height:1.05;}
+.brand__txt b{font-family:'Plus Jakarta Sans';font-weight:800;font-size:19px;
+  color:var(--navy);letter-spacing:-.025em;}
+.brand__txt small{font-size:9.5px;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--orange);margin-top:3px;}
+
+.menu{display:none;position:absolute;left:50%;transform:translateX(-50%);
+  align-items:center;gap:6px;}
+@media(min-width:960px){.menu{display:flex;}}
+.menu a{padding:10px 20px;font-size:14.5px;font-weight:700;color:var(--mute);
+  position:relative;transition:color .2s;letter-spacing:-.005em;}
+.menu a:hover{color:var(--navy);}
+.menu a.on{color:var(--navy);}
+.menu a.on::after{content:"";position:absolute;left:20px;right:20px;bottom:2px;
+  height:2.5px;background:var(--orange);border-radius:3px;}
+
+.nav__end{display:flex;align-items:center;gap:12px;flex:none;}
+.nav__end .btn{padding:12px 22px;}
+.nav__end .btn span{display:none;}
+@media(min-width:960px){.nav__end .btn span{display:inline;}}
+
+.burger{width:44px;height:44px;border-radius:12px;background:var(--gray);
+  display:grid;place-items:center;}
+@media(min-width:960px){.burger{display:none;}}
+.burger i{display:block;width:18px;height:2px;background:var(--navy);
+  border-radius:2px;position:relative;}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0;
+  width:18px;height:2px;background:var(--navy);border-radius:2px;transition:.25s;}
+.burger i::before{top:-6px;}
+.burger i::after{top:6px;}
+.burger.on i{background:transparent;}
+.burger.on i::before{top:0;transform:rotate(45deg);}
+.burger.on i::after{top:0;transform:rotate(-45deg);}
+
+.drawer{position:fixed;inset:0;z-index:90;background:var(--navy-dark);
+  padding:100px 28px 28px;display:flex;flex-direction:column;
+  transform:translateX(100%);transition:transform .3s ease;visibility:hidden;}
+.drawer.on{transform:none;visibility:visible;}
+.drawer a{color:#fff;font-size:22px;font-weight:800;letter-spacing:-.02em;
+  padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.drawer a:last-child{border:none;color:var(--orange);}
+@media(min-width:960px){.drawer{display:none;}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;overflow:hidden;background:#EEF3FA;}
+.hero__bg{position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center right;}
+.hero__overlay{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.98) 0%,
+    rgba(255,255,255,.92) 28%,
+    rgba(255,255,255,.55) 46%,
+    rgba(255,255,255,0) 62%);}
+.hero__overlay-2{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(255,255,255,0) 70%,rgba(246,248,251,1) 100%);}
+
+.hero__inner{position:relative;z-index:2;padding-block:72px 72px;}
+@media(min-width:768px){.hero__inner{padding-block:96px 100px;}}
+
+/* Judul utama */
+.hero h1{font-size:clamp(28px,4vw,46px);line-height:1.1;
+  letter-spacing:-.03em;margin-bottom:22px;max-width:520px;color:var(--navy);
+  font-weight:800;}
+.hero h1 em{font-style:normal;color:var(--orange);position:relative;display:inline-block;}
+
+.hero__lead{font-size:clamp(14.5px,1.3vw,16px);color:var(--mute);line-height:1.68;
+  max-width:460px;margin-bottom:34px;}
+.hero__btns{display:flex;flex-wrap:wrap;gap:12px;}
+
+@media(max-width:768px){
+  .hero__bg{object-position:70% center;opacity:.5;}
+  .hero__overlay{background:linear-gradient(180deg,
+    rgba(255,255,255,.98) 0%,rgba(255,255,255,.92) 60%,rgba(255,255,255,.85) 100%);}
+  .hero h1{font-size:clamp(28px,6.8vw,38px);max-width:100%;}
+  .hero__btns .btn{flex:1;min-width:150px;}
+}
+
+/* ============================================================
+   TRUST STRIP
+   ============================================================ */
+.trust{background:#fff;padding:32px 0;border-bottom:1px solid var(--line);}
+.trust__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 16px;}
+@media(min-width:640px){.trust__grid{grid-template-columns:repeat(4,1fr);}}
+.trust__it{display:flex;align-items:center;gap:14px;padding:4px 6px;}
+.trust__ic{width:44px;height:44px;border-radius:12px;flex:none;
+  background:var(--orange-l);color:var(--orange);display:grid;place-items:center;}
+.trust__ic svg{width:20px;height:20px;}
+.trust__it b{display:block;font-size:14px;font-weight:800;color:var(--navy);
+  letter-spacing:-.01em;}
+.trust__it span{font-size:12px;color:var(--mute);}
+
+/* ============================================================
+   PROGRAM GRID
+   ============================================================ */
+.programs{display:grid;gap:20px;grid-template-columns:1fr;}
+@media(min-width:600px){.programs{grid-template-columns:1fr 1fr;}}
+@media(min-width:1000px){.programs{grid-template-columns:repeat(4,1fr);}}
+.prg{background:#fff;border-radius:var(--r-lg);overflow:hidden;
+  border:1px solid var(--line);transition:all .3s cubic-bezier(.2,.7,.2,1);
+  display:flex;flex-direction:column;}
+.prg:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);
+  border-color:transparent;}
+.prg__img{aspect-ratio:16/11;overflow:hidden;background:var(--gray-2);}
+.prg__img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;}
+.prg:hover .prg__img img{transform:scale(1.06);}
+.prg__body{padding:24px 22px 26px;flex:1;display:flex;flex-direction:column;}
+.prg__ic{width:40px;height:40px;border-radius:12px;background:var(--orange-l);
+  color:var(--orange);display:grid;place-items:center;margin-bottom:16px;
+  transition:all .3s;}
+.prg:hover .prg__ic{background:var(--orange);color:#fff;}
+.prg__ic svg{width:19px;height:19px;}
+.prg h3{font-size:17px;margin-bottom:9px;letter-spacing:-.015em;}
+.prg p{font-size:13.5px;color:var(--mute);line-height:1.65;}
+
+/* ============================================================
+   WHY US
+   ============================================================ */
+.why{display:grid;gap:44px;align-items:center;}
+@media(min-width:900px){.why{grid-template-columns:1fr 1.05fr;gap:72px;}}
+.why__img{position:relative;border-radius:var(--r-lg);overflow:hidden;
+  aspect-ratio:4/3.4;background:var(--navy-2);box-shadow:var(--sh-lg);}
+.why__img img{width:100%;height:100%;object-fit:cover;}
+.why__badge{position:absolute;left:22px;bottom:22px;right:22px;
+  background:#fff;border-radius:var(--r);padding:18px 22px;
+  box-shadow:var(--sh);display:flex;align-items:center;gap:16px;}
+.why__badge-ic{width:48px;height:48px;border-radius:12px;flex:none;
+  background:var(--navy);color:var(--orange);display:grid;place-items:center;}
+.why__badge-ic svg{width:22px;height:22px;}
+.why__badge b{display:block;font-size:15px;font-weight:800;color:var(--navy);
+  letter-spacing:-.015em;}
+.why__badge span{font-size:12.5px;color:var(--mute);}
+
+.why__txt h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:16px;
+  letter-spacing:-.025em;}
+.why__txt>p{color:var(--mute);font-size:15.5px;margin-bottom:34px;max-width:520px;}
+.why__list{display:grid;grid-template-columns:1fr;gap:22px;}
+@media(min-width:520px){.why__list{grid-template-columns:1fr 1fr;}}
+.why__it{display:flex;gap:15px;align-items:flex-start;}
+.why__it-ic{width:44px;height:44px;border-radius:12px;flex:none;
+  background:var(--orange-l);color:var(--orange);display:grid;place-items:center;}
+.why__it-ic svg{width:20px;height:20px;}
+.why__it b{display:block;font-size:14.5px;font-weight:800;color:var(--navy);
+  margin-bottom:4px;letter-spacing:-.01em;}
+.why__it span{font-size:13px;color:var(--mute);line-height:1.55;}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px 0;
+}
+@media(min-width:800px){
+  .stats{
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+  }
+  /* Divider vertikal antar stat item */
+  .st:not(:last-child){
+    border-right:1px solid rgba(255,255,255,.08);
+  }
+}
+
+.st{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:8px 20px;
+}
+
+/* Icon — bulat penuh, glow ring, lebih modern */
+.st__ic{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  margin-bottom:20px;
+  background:rgba(232,131,58,.12);
+  color:var(--orange);
+  box-shadow:0 0 0 6px rgba(232,131,58,.07),
+             0 0 0 12px rgba(232,131,58,.03);
+}
+.st__ic svg{width:22px;height:22px;}
+
+/* Angka — lebih ringan, tidak terlalu tebal */
+.st__n{
+  font-size:clamp(28px,3.8vw,42px);
+  font-weight:700;
+  color:#fff;
+  line-height:1;
+  letter-spacing:-.035em;
+  margin-bottom:10px;
+}
+.st__n small{
+  font-size:.52em;
+  color:var(--orange);
+  font-weight:600;
+  margin-left:1px;
+}
+
+/* Label — lebih elegan, tidak terlalu tebal */
+.st__l{
+  font-size:11.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  font-weight:500;
+  color:rgba(255,255,255,.45);
+}
+
+/* ============================================================
+   TESTIMONIAL
+   ============================================================ */
+.tst{background:#fff;border-radius:var(--r-lg);padding:44px 40px;
+  box-shadow:var(--sh);border:1px solid var(--line);
+  display:grid;gap:32px;align-items:center;max-width:980px;margin-inline:auto;}
+@media(min-width:800px){.tst{grid-template-columns:1fr auto;gap:56px;
+  padding:52px 56px;}}
+.tst__q{position:relative;padding-left:60px;}
+.tst__q::before{content:"\201C";position:absolute;left:0;top:-24px;
+  font-size:96px;line-height:1;color:var(--orange);font-weight:800;
+  font-family:Georgia,serif;}
+.tst blockquote{margin:0;font-size:clamp(15.5px,1.7vw,18.5px);line-height:1.65;
+  color:var(--navy);font-weight:600;letter-spacing:-.015em;}
+.tst__who{margin-top:24px;display:flex;align-items:center;gap:14px;}
+.tst__av{width:48px;height:48px;border-radius:50%;flex:none;
+  background:linear-gradient(135deg,var(--navy),var(--navy-3));
+  color:#fff;display:grid;place-items:center;font-weight:800;font-size:15px;}
+.tst__who b{display:block;font-size:14.5px;font-weight:800;color:var(--navy);}
+.tst__who span{font-size:12.5px;color:var(--mute);}
+.tst__rate{text-align:center;padding-top:24px;border-top:1px solid var(--line);}
+@media(min-width:800px){.tst__rate{padding-top:0;padding-left:56px;
+  border-top:none;border-left:1px solid var(--line);}}
+.tst__stars{color:#F59E0B;font-size:22px;letter-spacing:2px;margin-bottom:10px;}
+.tst__rate b{display:block;font-size:30px;font-weight:800;color:var(--navy);
+  letter-spacing:-.03em;}
+.tst__rate span{font-size:12px;color:var(--mute);}
+
+/* ============================================================
+   NEWS
+   ============================================================ */
+.news{display:grid;gap:24px;}
+@media(min-width:700px){.news{grid-template-columns:repeat(3,1fr);}}
+.nw{background:#fff;border-radius:var(--r-lg);overflow:hidden;
+  border:1px solid var(--line);transition:all .3s;display:flex;flex-direction:column;}
+.nw:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:transparent;}
+.nw__img{aspect-ratio:16/10;background:var(--gray-2);overflow:hidden;position:relative;}
+.nw__img img{width:100%;height:100%;object-fit:cover;transition:transform .7s;}
+.nw:hover .nw__img img{transform:scale(1.06);}
+.nw__tag{position:absolute;top:14px;left:14px;background:var(--orange);
+  color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;padding:7px 13px;border-radius:999px;
+  box-shadow:0 4px 12px rgba(232,131,58,.3);}
+.nw__body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1;}
+.nw__date{font-size:12px;color:var(--mute);margin-bottom:10px;font-weight:600;
+  display:flex;align-items:center;gap:6px;}
+.nw__date svg{width:13px;height:13px;color:var(--mute-2);}
+.nw h3{font-size:17px;line-height:1.4;margin-bottom:10px;letter-spacing:-.015em;}
+.nw p{font-size:13.5px;color:var(--mute);line-height:1.65;flex:1;margin-bottom:18px;}
+
+/* ============================================================
+   CTA — solid, tanpa gradient
+   ============================================================ */
+.cta{position:relative;border-radius:var(--r-lg);overflow:hidden;
+  padding:56px 40px;color:#fff;background:var(--navy-dark);}
+@media(min-width:768px){.cta{padding:64px 72px;}}
+.cta__in{display:grid;gap:32px;align-items:center;}
+@media(min-width:800px){.cta__in{grid-template-columns:1.4fr auto;gap:56px;}}
+.cta h2{color:#fff;font-size:clamp(24px,3.2vw,36px);margin-bottom:14px;
+  letter-spacing:-.03em;line-height:1.15;}
+.cta h2 em{font-style:normal;color:var(--orange);}
+.cta p{color:rgba(255,255,255,.72);font-size:15.5px;max-width:520px;
+  line-height:1.7;}
+.cta__btns{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.ft{background:var(--navy-dark);color:rgba(255,255,255,.65);
+  padding:80px 0 0;font-size:14px;}
+.ft__grid{display:grid;gap:44px;padding-bottom:56px;}
+@media(min-width:640px){.ft__grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:900px){.ft__grid{grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:56px;}}
+.ft .brand__txt b{color:#fff;}
+.ft .brand__txt small{color:var(--orange);}
+.ft__desc{margin-top:22px;line-height:1.75;font-size:14px;max-width:320px;}
+.ft__soc{display:flex;gap:10px;margin-top:24px;}
+.ft__soc a{width:40px;height:40px;border-radius:12px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  display:grid;place-items:center;color:#fff;transition:all .22s;}
+.ft__soc a:hover{background:var(--orange);border-color:var(--orange);
+  transform:translateY(-3px);}
+.ft__soc svg{width:17px;height:17px;}
+.ft h5{font-size:12px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:#fff;margin:0 0 22px;}
+.ft__links li{margin-bottom:13px;}
+.ft__links a{transition:color .18s;font-size:14px;display:inline-flex;
+  align-items:center;gap:10px;}
+.ft__links a::before{content:"";width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,.22);transition:background .18s;}
+.ft__links a:hover{color:var(--orange);}
+.ft__links a:hover::before{background:var(--orange);}
+.ft__ct li{display:flex;gap:14px;margin-bottom:18px;font-size:14px;
+  line-height:1.6;}
+.ft__ct i{width:38px;height:38px;border-radius:11px;flex:none;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  display:grid;place-items:center;color:var(--orange);}
+.ft__ct i svg{width:16px;height:16px;}
+.ft__ct b{color:#fff;display:block;margin-bottom:2px;font-size:13.5px;}
+.ft__bot{border-top:1px solid rgba(255,255,255,.1);padding:24px 0;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:13px;}
+.ft__bot a:hover{color:var(--orange);}
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.rv{opacity:0;transform:translateY(20px);
+  transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1);}
+.rv.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SVG ICONS ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+  <symbol id="i-quran" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h11v18H6a2 2 0 0 0-2 2V5z"/><path d="M17 3v18M8 7h6M8 11h4"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9 12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></symbol>
+  <symbol id="i-mosque" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-4 3.5-4 7h8c0-3.5-4-7-4-7z"/><path d="M4 21V13a4 4 0 0 1 4-4M20 21V13a4 4 0 0 0-4-4"/><path d="M9 21v-5a3 3 0 0 1 6 0v5"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 3.5 6 3.5 9s-1 6-3.5 9c-2.5-3-3.5-6-3.5-9s1-6 3.5-9z"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v4l4 9a3 3 0 0 1-3 4H8a3 3 0 0 1-3-4l4-9V3z"/><path d="M6 14h12"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.2.9-4.5 4.3 1.1 6.2L12 17.1 6.5 20l1.1-6.2L3.1 9.5l6.2-.9L12 3z"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/><path d="M12 14v3M9 21h6M10 17h4"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2V10z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 4 4 5-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12s0-4-.5-5.5a2.5 2.5 0 0 0-1.8-1.8C18 4.2 12 4.2 12 4.2s-6 0-7.7.5a2.5 2.5 0 0 0-1.8 1.8C2 8 2 12 2 12s0 4 .5 5.5a2.5 2.5 0 0 0 1.8 1.8c1.7.5 7.7.5 7.7.5s6 0 7.7-.5a2.5 2.5 0 0 0 1.8-1.8C22 16 22 12 22 12z"/><path d="m10 15 5-3-5-3v6z"/></symbol>
+
+  <!-- ============================================================
+       LOGO MARK — Rub el Hizb (octagram) + titik pusat orange
+       Geometris, modern, referensi pola Islam tanpa klise
+       ============================================================ -->
+  <symbol id="logo-mark" viewBox="0 0 48 48">
+    <!-- Container rounded square -->
+    <rect width="48" height="48" rx="14" fill="#16294A"/>
+    <!-- Rub el Hizb: dua kotak bertumpuk, salah satu diputar 45° -->
+    <g fill="none" stroke="#E6B54A" stroke-width="1.5"
+       stroke-linejoin="round" opacity=".95">
+      <rect x="12" y="12" width="24" height="24" rx="1"/>
+      <rect x="12" y="12" width="24" height="24" rx="1"
+            transform="rotate(45 24 24)"/>
+    </g>
+    <!-- Titik pusat orange -->
+    <circle cx="24" cy="24" r="3.6" fill="#E8833A"/>
+    <!-- Aksen garis kecil di tengah titik -->
+    <circle cx="24" cy="24" r="1.2" fill="#16294A"/>
+  </symbol>
+</svg>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="index.html" class="brand">
+      <span class="brand__mark"><img src="logo_darul_itqan.png" alt="Logo SMA IT Darul Itqan"></span>
+      <span class="brand__txt">
+        <b>Darul Itqan</b>
+        <small>SMA Islam Terpadu</small>
+      </span>
+    </a>
+
+    <nav class="menu">
+      <a href="index.html" class="on">Beranda</a>
+      <a href="pendaftaran.html">Informasi Pendaftaran</a>
+    </nav>
+
+    <div class="nav__end">
+      <a href="form.html" class="btn btn-o">
+        Daftar <span>Sekarang</span>
+        <svg><use href="#i-arrow"/></svg>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i></button>
+    </div>
+  </div>
+</header>
+
+<nav class="drawer" id="drawer">
+  <a href="index.html">Beranda</a>
+  <a href="pendaftaran.html">Informasi Pendaftaran</a>
+  <a href="form.html">Daftar Sekarang →</a>
+</nav>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <img src="hero2.jpg" alt="Gedung SMA Islam Terpadu Darul Itqan" class="hero__bg">
+  <div class="hero__overlay"></div>
+  <div class="hero__overlay-2"></div>
+
+  <div class="container hero__inner">
+
+    <h1>
+      Sekolah Islam Fokus Program Tahfizh
+    </h1>
+
+    <p class="hero__lead">
+      Pendidikan terpadu memadukan hafalan Al-Qur'an bersanad, kurikulum
+      nasional unggulan, dan pembinaan adab kepemimpinan untuk masa depan
+      berdaya saing global.
+    </p>
+
+    <div class="hero__btns">
+      <a href="form.html" class="btn btn-o">
+        Daftar Sekarang
+        <svg><use href="#i-arrow"/></svg>
+      </a>
+      <a href="pendaftaran.html" class="btn btn-ghost">Informasi Pendaftaran</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="trust">
+  <div class="container">
+    <div class="trust__grid">
+      <div class="trust__it rv">
+        <div class="trust__ic"><svg><use href="#i-quran"/></svg></div>
+        <div><b>Al-Qur'an Bersanad</b><span>Halaqah harian</span></div>
+      </div>
+      <div class="trust__it rv">
+        <div class="trust__ic"><svg><use href="#i-grad"/></svg></div>
+        <div><b>Kurikulum Merdeka</b><span>Akademik unggul</span></div>
+      </div>
+      <div class="trust__it rv">
+        <div class="trust__ic"><svg><use href="#i-shield"/></svg></div>
+        <div><b>Akreditasi A</b><span>BAN-S/M</span></div>
+      </div>
+      <div class="trust__it rv">
+        <div class="trust__ic"><svg><use href="#i-home"/></svg></div>
+        <div><b>Asrama Siswa</b><span>Putra &amp; Putri</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAM UNGGULAN ============ -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">Program Unggulan</span>
+      <h2>Empat pilar pendidikan Darul Itqan.</h2>
+      <p>Setiap program dirancang agar siswa tumbuh utuh — kuat ruhiyah, cerdas intelektual, dan matang secara sosial.</p>
+    </div>
+
+    <div class="programs">
+      <article class="prg rv">
+        <div class="prg__img">
+          <img src="gambar5.jpg" alt="Tahfizhul Quran">
+        </div>
+        <div class="prg__body">
+          <div class="prg__ic"><svg><use href="#i-quran"/></svg></div>
+          <h3>Tahfizhul Quran</h3>
+          <p>Halaqah harian dengan rasio kecil, setoran ziyadah, muraja'ah terjadwal, dan ujian juz berkala.</p>
+        </div>
+      </article>
+      <article class="prg rv">
+        <div class="prg__img">
+          <img src="gambar4.jpg" alt="Akademik unggul">
+        </div>
+        <div class="prg__body">
+          <div class="prg__ic"><svg><use href="#i-grad"/></svg></div>
+          <h3>Akademik Unggul</h3>
+          <p>Kelas Matematika, Sains, dan Bahasa dengan pendekatan Kurikulum Merdeka yang kontekstual.</p>
+        </div>
+      </article>
+      <article class="prg rv">
+        <div class="prg__img">
+          <img src="sam-sul-47EwQ_mPUmY-unsplash.jpg" alt="Diniyah dan karakter">
+        </div>
+        <div class="prg__body">
+          <div class="prg__ic"><svg><use href="#i-mosque"/></svg></div>
+          <h3>Diniyah &amp; Karakter</h3>
+          <p>Kajian aqidah, fiqih, sirah, dan adab harian yang membentuk pribadi muslim yang utuh.</p>
+        </div>
+      </article>
+      <article class="prg rv">
+        <div class="prg__img">
+          <img src="faqih-abdul-OP4nUoINJLc-unsplash.jpg" alt="Bahasa Arab dan Inggris">
+        </div>
+        <div class="prg__body">
+          <div class="prg__ic"><svg><use href="#i-globe"/></svg></div>
+          <h3>Bilingual Arab–Inggris</h3>
+          <p>Program language day, muhadatsah, dan public speaking untuk komunikasi global.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="sec sec-gray">
+  <div class="container">
+    <div class="why">
+      <div class="why__img rv">
+        <img src="gambar2.jpg" alt="Lingkungan belajar Darul Itqan">
+        <div class="why__badge">
+          <div class="why__badge-ic"><svg><use href="#i-trophy"/></svg></div>
+          <div>
+            <b>98% Lulusan Lanjut Kuliah</b>
+            <span>32% meraih beasiswa akademik</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="why__txt rv">
+        <span class="eyebrow">Mengapa Darul Itqan</span>
+        <h2>Profesional di Dunia, Totalitas untuk Akhirat.</h2>
+        <p>
+          Setiap elemen di Darul Itqan dirancang agar siswa tumbuh utuh —
+          kuat dalam ibadah, unggul dalam ilmu, dan matang dalam pergaulan.
+        </p>
+        <div class="why__list">
+          <div class="why__it">
+            <div class="why__it-ic"><svg><use href="#i-quran"/></svg></div>
+            <div><b>Halaqah Intensif</b><span>Rasio 1:8 hingga 1:12 dengan musyrif bersertifikat.</span></div>
+          </div>
+          <div class="why__it">
+            <div class="why__it-ic"><svg><use href="#i-chart"/></svg></div>
+            <div><b>Rapor Transparan</b><span>Laporan hafalan dan akademik setiap bulan.</span></div>
+          </div>
+          <div class="why__it">
+            <div class="why__it-ic"><svg><use href="#i-users"/></svg></div>
+            <div><b>Pembinaan Personal</b><span>Setiap siswa punya mentor dan target pribadi.</span></div>
+          </div>
+          <div class="why__it">
+            <div class="why__it-ic"><svg><use href="#i-home"/></svg></div>
+            <div><b>Asrama Opsional</b><span>Program muraja'ah malam dan qiyamul lail.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATISTIK ============ -->
+<section class="sec sec-navy">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">Angka yang Berbicara</span>
+      <h2>Kepercayaan yang dibangun bertahun-tahun.</h2>
+    </div>
+
+    <div class="stats">
+      <div class="st rv">
+        <div class="st__ic"><svg><use href="#i-users"/></svg></div>
+        <div class="st__n" data-count="600">0<small>+</small></div>
+        <div class="st__l">Siswa Aktif</div>
+      </div>
+      <div class="st rv">
+        <div class="st__ic"><svg><use href="#i-grad"/></svg></div>
+        <div class="st__n" data-count="50">0<small>+</small></div>
+        <div class="st__l">Guru &amp; Musyrif</div>
+      </div>
+      <div class="st rv">
+        <div class="st__ic"><svg><use href="#i-quran"/></svg></div>
+        <div class="st__n" data-count="150">0<small>+</small></div>
+        <div class="st__l">Lulusan Hafal 30 Juz</div>
+      </div>
+      <div class="st rv">
+        <div class="st__ic"><svg><use href="#i-chart"/></svg></div>
+        <div class="st__n" data-count="98">0<small>%</small></div>
+        <div class="st__l">Lulusan Lanjut Kuliah</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONI ============ -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">Testimoni</span>
+      <h2>Kata mereka tentang Darul Itqan.</h2>
+    </div>
+
+    <div class="tst rv">
+      <div class="tst__q">
+        <blockquote id="tstText">
+          Sejak masuk Darul Itqan, anak saya jauh lebih disiplin dalam shalat
+          dan hafalannya bertambah setiap bulan. Gurunya perhatian dan
+          komunikatif dengan orang tua.
+        </blockquote>
+        <div class="tst__who">
+          <div class="tst__av" id="tstAv">RS</div>
+          <div>
+            <b id="tstName">Ibu Rina Suryani</b>
+            <span id="tstRole">Orang Tua Siswa Kelas XI</span>
+          </div>
+        </div>
+      </div>
+      <div class="tst__rate">
+        <div class="tst__stars">★★★★★</div>
+        <b>4.9</b>
+        <span>Dari 240 ulasan orang tua</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BERITA ============ -->
+<section class="sec sec-gray">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="eyebrow">Berita &amp; Pengumuman</span>
+      <h2>Kabar terbaru dari Darul Itqan.</h2>
+    </div>
+
+    <div class="news">
+      <article class="nw rv">
+        <div class="nw__img">
+          <img src="hero2.jpg" alt="Masjid sekolah">
+          <span class="nw__tag">PPDB</span>
+        </div>
+        <div class="nw__body">
+          <div class="nw__date"><svg><use href="#i-cal"/></svg>05 Oktober 2026</div>
+          <h3>PPDB Gelombang 1 Tahun Ajaran 2027/2028 Resmi Dibuka</h3>
+          <p>Kuota terbatas 120 siswa untuk menjaga kualitas bimbingan tahfizh setiap halaqah.</p>
+          <a href="pendaftaran.html" class="link">Baca selengkapnya
+            <svg><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="nw rv">
+        <div class="nw__img">
+          <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=800&q=80" alt="Mushaf Al-Qur'an">
+          <span class="nw__tag">Kegiatan</span>
+        </div>
+        <div class="nw__body">
+          <div class="nw__date"><svg><use href="#i-cal"/></svg>28 September 2026</div>
+          <h3>Wisuda Tahfizh Angkatan VIII — 15 Siswa Selesaikan 30 Juz</h3>
+          <p>Prosesi digelar di masjid sekolah, dihadiri orang tua dan dewan pembina yayasan.</p>
+          <a href="#" class="link">Baca selengkapnya
+            <svg><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </article>
+      <article class="nw rv">
+        <div class="nw__img">
+          <img src="george-pisarevsky-u-OIymmnw1s-unsplash.jpg" alt="Perpustakaan sekolah">
+          <span class="nw__tag">Prestasi</span>
+        </div>
+        <div class="nw__body">
+          <div class="nw__date"><svg><use href="#i-cal"/></svg>20 September 2026</div>
+          <h3>Siswa Darul Itqan Raih Medali Emas OSN Bidang Biologi</h3>
+          <p>Ananda Salsabila (Kelas XII) mengharumkan nama sekolah di Olimpiade Sains Nasional.</p>
+          <a href="#" class="link">Baca selengkapnya
+            <svg><use href="#i-arrow"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA — solid tanpa gradient ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="container">
+    <div class="cta rv">
+      <div class="cta__in">
+        <div>
+          <h2>Siap menjadi bagian dari <em>Darul Itqan</em>?</h2>
+          <p>Kuota tahun ajaran 2027/2028 terbatas. Proses pendaftaran hanya butuh 10 menit — amankan kursi putra-putri Anda hari ini.</p>
+        </div>
+        <div class="cta__btns">
+          <a href="form.html" class="btn btn-o">
+            Daftar Sekarang
+            <svg><use href="#i-arrow"/></svg>
+          </a>
+          <a href="pendaftaran.html" class="btn btn-line">Info Pendaftaran</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ft">
+  <div class="container">
+    <div class="ft__grid">
+      <div>
+        <a href="index.html" class="brand">
+          <span class="brand__mark"><img src="logo_darul_itqan.png" alt="Logo SMA IT Darul Itqan"></span>
+          <span class="brand__txt">
+            <b>Darul Itqan</b>
+            <small>SMA Islam Terpadu</small>
+          </span>
+        </a>
+        <p class="ft__desc">
+          Mencetak generasi Qur'ani, berilmu, dan berakhlak mulia melalui
+          program unggulan Tahfizhul Quran yang terpadu dengan kurikulum nasional.
+        </p>
+        <div class="ft__soc">
+          <a href="#" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h5>Navigasi</h5>
+        <ul class="ft__links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="pendaftaran.html">Informasi Pendaftaran</a></li>
+          <li><a href="form.html">Form Pendaftaran</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Program</h5>
+        <ul class="ft__links">
+          <li><a href="#">Tahfizhul Quran</a></li>
+          <li><a href="#">Akademik</a></li>
+          <li><a href="#">Diniyah &amp; Karakter</a></li>
+          <li><a href="#">Ekstrakurikuler</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Hubungi Kami</h5>
+        <ul class="ft__ct">
+          <li>
+            <i><svg><use href="#i-pin"/></svg></i>
+            <div><b>Alamat</b>Jl. Pendidikan No. 123, Kota Contoh</div>
+          </li>
+          <li>
+            <i><svg><use href="#i-phone"/></svg></i>
+            <div><b>Telepon</b>(021) 1234567 · 0812-3456-7890</div>
+          </li>
+          <li>
+            <i><svg><use href="#i-mail"/></svg></i>
+            <div><b>Email</b>info@darulitqan.sch.id</div>
+          </li>
+          <li>
+            <i><svg><use href="#i-clock"/></svg></i>
+            <div><b>Jam Layanan</b>Senin–Jumat, 08.00–15.00 WIB</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft__bot">
+      <span>© 2026 SMA Islam Terpadu Darul Itqan. Seluruh hak cipta dilindungi.</span>
+      <span><a href="#">Kebijakan Privasi</a> · <a href="#">Peta Situs</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+
+  /* Burger / Drawer */
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  burger.addEventListener('click', function(){
+    var open = drawer.classList.toggle('on');
+    burger.classList.toggle('on', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.classList.remove('on');
+      burger.classList.remove('on');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* Navbar shadow on scroll */
+  var nav = document.getElementById('nav');
+  var ticking = false;
+  function onScroll(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* Reveal on scroll */
+  var items = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold:.12, rootMargin:'0px 0px -40px 0px' });
+    items.forEach(function(el){ io.observe(el); });
+  } else {
+    items.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* Counter statistik */
+  var cs = document.querySelectorAll('[data-count]');
+  if ('IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        var target = parseInt(el.dataset.count, 10);
+        var small = el.querySelector('small');
+        var suffix = small ? small.outerHTML : '';
+        var start = performance.now();
+        var dur = 1300;
+        function step(now){
+          var p = Math.min((now - start)/dur, 1);
+          var ease = 1 - Math.pow(1 - p, 3);
+          el.innerHTML = Math.round(target * ease) + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        cio.unobserve(el);
+      });
+    }, { threshold:.4 });
+    cs.forEach(function(el){ cio.observe(el); });
+  }
+
+  /* Testimoni rotator */
+  var quotes = [
+    { t:'"Sejak masuk Darul Itqan, anak saya jauh lebih disiplin dalam shalat dan hafalannya bertambah setiap bulan. Gurunya perhatian dan komunikatif dengan orang tua."',
+      n:'Ibu Rina Suryani', r:'Orang Tua Siswa Kelas XI', a:'RS' },
+    { t:'"Halaqah di Darul Itqan menyenangkan, bukan sekadar menyetor hafalan. Musyrif kami selalu memberi motivasi dan cara muraja\'ah yang efektif. Alhamdulillah sudah 12 juz."',
+      n:'Ahmad Fadhlan', r:'Siswa Kelas XI — Jalur Tahfizh', a:'AF' },
+    { t:'"Bekal Qur\'ani dan kebiasaan disiplin dari Darul Itqan sangat terasa saat kuliah. Saya bisa mengatur waktu antara hafalan, organisasi, dan akademik."',
+      n:'Nabila Zahra', r:'Alumni 2023 — Mahasiswi Kedokteran', a:'NZ' }
+  ];
+  var qT = document.getElementById('tstText');
+  var qN = document.getElementById('tstName');
+  var qR = document.getElementById('tstRole');
+  var qA = document.getElementById('tstAv');
+  var i = 0;
+  qT.style.transition = 'opacity .3s ease';
+  function rotate(){
+    i = (i + 1) % quotes.length;
+    qT.style.opacity = 0;
+    setTimeout(function(){
+      qT.textContent = quotes[i].t;
+      qN.textContent = quotes[i].n;
+      qR.textContent = quotes[i].r;
+      qA.textContent = quotes[i].a;
+      qT.style.opacity = 1;
+    }, 200);
+  }
+  setInterval(rotate, 7500);
+})();
+</script>
+</body>
+</html>
